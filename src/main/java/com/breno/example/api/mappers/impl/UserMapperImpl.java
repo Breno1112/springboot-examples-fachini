@@ -1,7 +1,8 @@
 package com.breno.example.api.mappers.impl;
 
 import com.breno.example.api.domain.entities.UserEntity;
-import com.breno.example.api.dtos.UserDTO;
+import com.breno.example.api.dtos.data.UserDTO;
+import com.breno.example.api.dtos.exceptions.UserNotFoundException;
 import com.breno.example.api.mappers.UserMapper;
 import org.springframework.stereotype.Component;
 
@@ -26,6 +27,26 @@ public class UserMapperImpl implements UserMapper {
         userEntity.setMiddleName(userDTO.getMiddleName());
         userEntity.setLastName(userDTO.getLastName());
         userEntity.setAge(userDTO.getAge());
+        return userEntity;
+    }
+
+    @Override
+    public UserEntity dynamicUserDTOToEntity(UserDTO userDTO, UserEntity userEntity) {
+        if(userEntity == null){
+            throw new UserNotFoundException();
+        }
+        if (userDTO.getFirstName() != null){
+            userEntity.setFirstName(userDTO.getFirstName());
+        }
+        if(userDTO.getMiddleName() != null){
+            userEntity.setMiddleName(userDTO.getMiddleName());
+        }
+        if(userDTO.getLastName() != null){
+            userEntity.setLastName(userDTO.getLastName());
+        }
+        if(userDTO.getAge() != null){
+            userEntity.setAge(userDTO.getAge());
+        }
         return userEntity;
     }
 }

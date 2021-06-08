@@ -1,9 +1,7 @@
-package com.breno.example.api.dtos;
+package com.breno.example.api.dtos.data;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class UserDTO {
+public class UserDTO extends MessageResponseDTO{
 
     private Long id;
 
