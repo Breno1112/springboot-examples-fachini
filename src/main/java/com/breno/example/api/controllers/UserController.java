@@ -15,4 +15,8 @@ public interface UserController {
     default Mono<UserDTO> getUser(@PathVariable("id") Long id){
         throw new RuntimeException(NOT_IMPLEMENTED_EXCEPTION_MESSAGE);
     }
+
+    default Mono<UserDTO> addUser(UserDTO body){
+        throw new RuntimeException(NOT_IMPLEMENTED_EXCEPTION_MESSAGE);
+    }
 }
