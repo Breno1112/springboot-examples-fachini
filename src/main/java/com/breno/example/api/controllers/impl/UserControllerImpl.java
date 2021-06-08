@@ -15,25 +15,21 @@ public class UserControllerImpl implements UserController {
     private UserService userService;
 
     @Override
-    @GetMapping("/user/{id}")
     public Mono<UserDTO> getUser(Long id) {
         return Mono.just(this.userService.findUserById(id));
     }
 
     @Override
-    @PostMapping("/user")
     public Mono<UserDTO> addUser(@RequestBody UserDTO body) {
         return Mono.just(this.userService.addUser(body));
     }
 
     @Override
-    @DeleteMapping("/user/{id}")
     public Mono<MessageResponseDTO> deleteUser(Long id) {
         return Mono.just(this.userService.deleteUser(id));
     }
 
     @Override
-    @PutMapping("/user/{id}")
     public Mono<UserDTO> updateUser(Long id, UserDTO body) {
         return Mono.just(this.userService.updateUser(id, body));
     }
