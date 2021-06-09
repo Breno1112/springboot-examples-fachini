@@ -1,6 +1,6 @@
 package com.breno.example.graphql.configuration;
 
-import com.breno.example.graphql.types.resolvers.UserQueryResolver;
+import com.breno.example.graphql.queries.resolvers.UserQueryResolver;
 import com.breno.example.graphql.types.resolvers.UserTypeResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
