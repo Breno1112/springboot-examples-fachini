@@ -2,6 +2,10 @@ package com.breno.example.graphql.types;
 
 public class UserType {
 
+    public UserType(String id){
+        this.id = id;
+    }
+
     private String id;
 
     private String firstName;
@@ -30,5 +34,25 @@ public class UserType {
 
     public Integer getAge() {
         return age;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }
