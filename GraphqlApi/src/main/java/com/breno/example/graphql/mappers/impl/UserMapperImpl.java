@@ -12,7 +12,7 @@ public class UserMapperImpl implements UserMapper {
 
     @Override
     public UserType fromUserEntityToType(UserEntity userEntity) {
-        final UserType toReturn = new UserType(userEntity.getId().toString());
+        final UserType toReturn = new UserType();
         toReturn.setId(userEntity.getId().toString());
         toReturn.setAge(userEntity.getAge());
         toReturn.setFirstName(userEntity.getFirstName());
@@ -53,7 +53,7 @@ public class UserMapperImpl implements UserMapper {
 
     @Override
     public UserType fromUserInputToUserType(UserInput userInput) {
-        final UserType userType = new UserType(userInput.getId());
+        final UserType userType = new UserType();
         userType.setId(null);
         userType.setFirstName(userInput.getFirstName());
         userType.setMiddleName(userInput.getMiddleName());

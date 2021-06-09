@@ -2,9 +2,6 @@ package com.breno.example.graphql.types;
 
 public class UserType {
 
-    public UserType(String id){
-        this.id = id;
-    }
 
     private String id;
 

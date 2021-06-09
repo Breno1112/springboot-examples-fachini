@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserType findUserById(String id) {
-        return this.userRepository.findById(Long.parseLong(id)).map(value -> userMapper.fromUserEntityToType(value)).orElse(new UserType(""));
+        return this.userRepository.findById(Long.parseLong(id)).map(value -> userMapper.fromUserEntityToType(value)).orElse(new UserType());
     }
 
     @Override
