@@ -6,7 +6,7 @@ import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class UserQueryResolver implements GraphQLQueryResolver {
+public class UserQueriesResolver implements GraphQLQueryResolver {
 
     @Autowired
     private UserService userService;

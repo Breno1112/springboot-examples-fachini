@@ -2,6 +2,7 @@ package com.breno.example.graphql.mappers;
 
 
 import com.breno.example.graphql.domain.entities.UserEntity;
+import com.breno.example.graphql.types.UserInput;
 import com.breno.example.graphql.types.UserType;
 
 public interface UserMapper {
@@ -17,6 +18,10 @@ public interface UserMapper {
     }
 
     default UserEntity dynamicUserTypeToEntity(UserType userType, UserEntity userEntity){
+        throw new RuntimeException(USER_MAPPER_NOT_IMPLEMENTED_MESSAGE);
+    }
+
+    default UserType fromUserInputToUserType(UserInput userInput){
         throw new RuntimeException(USER_MAPPER_NOT_IMPLEMENTED_MESSAGE);
     }
 }

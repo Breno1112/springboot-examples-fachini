@@ -3,6 +3,7 @@ package com.breno.example.graphql.mappers.impl;
 import com.breno.example.graphql.domain.entities.UserEntity;
 import com.breno.example.graphql.exceptions.UserNotFoundException;
 import com.breno.example.graphql.mappers.UserMapper;
+import com.breno.example.graphql.types.UserInput;
 import com.breno.example.graphql.types.UserType;
 import org.springframework.stereotype.Component;
 
@@ -48,5 +49,16 @@ public class UserMapperImpl implements UserMapper {
             userEntity.setAge(userType.getAge());
         }
         return userEntity;
+    }
+
+    @Override
+    public UserType fromUserInputToUserType(UserInput userInput) {
+        final UserType userType = new UserType(userInput.getId());
+        userType.setId(null);
+        userType.setFirstName(userInput.getFirstName());
+        userType.setMiddleName(userInput.getMiddleName());
+        userType.setLastName(userInput.getLastName());
+        userType.setAge(userInput.getAge());
+        return userType;
     }
 }

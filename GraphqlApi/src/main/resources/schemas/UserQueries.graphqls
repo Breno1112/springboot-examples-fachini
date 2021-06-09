@@ -6,6 +6,18 @@ type User{
     age: Int
 }
 
+input UserInput{
+    id: ID,
+    firstName: String,
+    middleName: String,
+    lastName: String,
+    age: Int
+}
+
 type Query {
     user(id: ID!): User
+}
+
+type Mutation {
+    addUser(user: UserInput!): User!
 }
